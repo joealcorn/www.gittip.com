@@ -4,13 +4,18 @@ set -e
 
 # Make a database for Gittip.
 #
-#   usage: makedb.sh {dbname} {owner}
+#   usage: makedb.sh {dbname} {owner} {host}
 
 DBNAME_DEFAULT=gittip
 DBNAME=${1:-$DBNAME_DEFAULT}
 
 OWNER_DEFAULT=$DBNAME
 OWNER=${2:-$OWNER_DEFAULT}
+
+# This will default to a unix socket in the correct dir
+HOST_DEFAULT=""
+PGHOST=${3:-$HOST_DEFAULT}
+export PGHOST
 
 
 echo "=============================================================================="

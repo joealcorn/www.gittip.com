@@ -291,6 +291,12 @@ If you only pass one argument it will be used for both dbname and owner role:
 
     $ ./makedb.sh gittip-test
 
+You're also able to specify an alternate host, though this will require you to
+specify the previous two options as well:
+
+    $ ./makedb.sh mygittip myuser dbserver.com
+
+
 The schema for the Gittip.com database is defined in schema.sql. It should be
 considered append-only. The idea is that this is the log of DDL that
 we've run against the production database. You should never change
